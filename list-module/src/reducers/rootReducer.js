@@ -47,7 +47,7 @@ export const rootReducer = (state = initialState, action) => {
     }
     case CLEAR_STORE: {
       localStorage.clear();
-      return initialState;
+      return { ...state, itemsList: [] };
     }
     default:
       return state;
