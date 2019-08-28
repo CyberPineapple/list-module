@@ -72,6 +72,7 @@
 
 .text {
   margin: 10px 0;
+  width: 100%;
 }
 
 .author {
@@ -91,12 +92,12 @@
 }
 
 .genre {
+  composes: text;
   font-size: 14px;
   font-style: italic;
 }
 
 .description {
   composes: text;
-  width: 100%;
   border-top: 2px solid black;
 }
