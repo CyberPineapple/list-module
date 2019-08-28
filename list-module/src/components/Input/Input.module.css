@@ -1,0 +1,50 @@
+.block {
+  grid-area: "navbar";
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  display: block;
+  margin: 30px;
+  background-color: antiquewhite;
+  cursor: pointer;
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.733);
+}
+
+.button:focus {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px 1px rgba(126, 115, 115, 0.287);
+}
+
+.button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px 1px rgba(126, 115, 115, 0.287);
+}
+
+.input {
+  display: block;
+  border-bottom: 2px solid rgb(189, 163, 129);
+  font-size: 23px;
+  margin: 15px;
+  transition: transform 0.3s ease, border 0.3s ease;
+}
+
+.input:hover {
+  transform: translateY(-5px);
+  border-color: black;
+}
+
+.input:focus {
+  transform: translateY(-5px);
+  border-color: black;
+}
+
+.input::placeholder {
+  text-transform: uppercase;
+  text-align: center;
+}

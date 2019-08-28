@@ -1,0 +1,14 @@
+.block {
+  width: 100%;
+  grid-area: output;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  overflow-y: scroll;
+}
+
+.block::-webkit-scrollbar {
+  display: none;
+}

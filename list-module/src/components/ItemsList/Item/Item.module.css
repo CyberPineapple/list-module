@@ -1,0 +1,102 @@
+.block {
+  width: 200px;
+  margin: 30px;
+  min-height: 300px;
+  border: 2px solid rgb(189, 163, 129);
+  cursor: pointer;
+  position: relative;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  word-wrap: break-word;
+}
+
+.block:hover {
+  transform: translateY(-5px);
+  border-color: black;
+  box-shadow: 0 10px 20px 1px rgba(126, 115, 115, 0.287);
+}
+
+.deleteButton {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 25px;
+  height: 25px;
+  background-image: url(http://svtrayd.by/images/n-s.png);
+  background-size: cover;
+  opacity: 0.3;
+  transition: opacity 0.5s ease;
+}
+
+.deleteButton:hover {
+  opacity: 1;
+}
+
+.input {
+  margin: 10px;
+  display: block;
+  width: 100%;
+  border-bottom: 2px solid rgb(189, 163, 129);
+  transition: transform 0.3s ease, border 0.3s ease;
+}
+
+.input:hover {
+  transform: translateY(-2px);
+  border-color: black;
+}
+
+.input:focus {
+  transform: translateY(-2px);
+  border-color: black;
+}
+
+.buttonSave {
+  display: flex;
+  margin: auto;
+  background-color: antiquewhite;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-transform: uppercase;
+}
+
+.buttonSave:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 5px 1px rgba(104, 101, 101, 0.466);
+}
+
+.text {
+  margin: 10px 0;
+}
+
+.author {
+  composes: text;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.name {
+  composes: text;
+  font-size: 18px;
+}
+
+.name::after,
+.name::before {
+  content: '"';
+}
+
+.genre {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.description {
+  composes: text;
+  width: 100%;
+  border-top: 2px solid black;
+}

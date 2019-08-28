@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  outline: none;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+input {
+  outline: none;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+.app {
+  display: grid;
+  height: 100vh;
+  grid-template-areas:
+    "navbar filter"
+    "navbar output";
+  grid-template-columns: 30vw 70vw;
+  grid-template-rows: 100px auto;
+}
