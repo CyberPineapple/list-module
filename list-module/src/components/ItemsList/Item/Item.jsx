@@ -1,7 +1,8 @@
-import React, { Component, Fragment } from "react";
+import React, { PureComponent, Fragment } from "react";
 import styles from "./Item.module.css";
+import PropTypes from "prop-types";
 
-export default class Item extends Component {
+export default class Item extends PureComponent {
   state = {
     isVisibleDeleteButton: false,
     isEdit: false,
@@ -41,15 +42,14 @@ export default class Item extends Component {
   };
 
   handleClickSaveButton = () => {
-    const { onChangeItemValue, id, value } = this.props;
+    const { onChangeItemValue, id } = this.props;
     const { fields } = this.state;
     if (this.isEmptyFields()) {
       return;
     } else {
       onChangeItemValue({ ...fields }, id);
       this.setState({
-        isEdit: false,
-        fields: value
+        isEdit: false
       });
     }
   };
@@ -112,3 +112,10 @@ export default class Item extends Component {
     );
   }
 }
+
+Item.propTypes = {
+  value: PropTypes.object,
+  onChangeItemValue: PropTypes.func,
+  onRemoveItem: PropTypes.func,
+  id: PropTypes.number
+};

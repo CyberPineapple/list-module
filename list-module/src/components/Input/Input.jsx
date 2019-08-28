@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import styles from "./Input.module.css";
 import { inputFieldList } from "../../constants/InputFieldList";
+import PropTypes from "prop-types";
 
 export default class Input extends PureComponent {
   state = {
@@ -67,3 +68,8 @@ export default class Input extends PureComponent {
     );
   }
 }
+
+Input.propTypes = {
+  onAddNewItem: PropTypes.func,
+  onClearStore: PropTypes.func
+};

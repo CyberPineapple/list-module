@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Filter from "../components/Filter/Filter";
+import Filter from "../components/Filter/";
 import { changeFilterAction } from "../actions";
 
 export class FilterContainer extends Component {

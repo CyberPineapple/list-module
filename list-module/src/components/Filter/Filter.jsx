@@ -1,5 +1,6 @@
 import React, { PureComponent } from "react";
 import styles from "./Filter.module.css";
+import PropTypes from "prop-types";
 
 export default class Filter extends PureComponent {
   handleChange = ({ target: { value } }) => {
@@ -20,3 +21,8 @@ export default class Filter extends PureComponent {
     );
   }
 }
+
+Filter.propTypes = {
+  filter: PropTypes.string,
+  onChangeFilter: PropTypes.func
+};
