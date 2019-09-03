@@ -4,15 +4,13 @@
   grid-area: filter;
   border: 2px solid rgb(189, 163, 129);
   padding: 10px;
-  transition: transform 0.3s ease, border 0.3s ease;
+  transition: border 0.3s ease;
 }
 
 .input:hover {
   border-color: black;
-  transform: translateY(-3px);
 }
 
 .input:focus {
   border-color: black;
-  transform: translateY(-3px);
 }

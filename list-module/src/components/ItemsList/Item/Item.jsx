@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 
 export default class Item extends PureComponent {
   state = {
-    isVisibleDeleteButton: false,
     isEdit: false,
     fields: this.props.value
   };
@@ -18,21 +17,9 @@ export default class Item extends PureComponent {
     return false;
   };
 
-  handleDoubleClick = () => {
+  handleClickEditButton = () => {
     this.setState({
       isEdit: true
-    });
-  };
-
-  handleMouseOver = () => {
-    this.setState({
-      isVisibleDeleteButton: true
-    });
-  };
-
-  handleMouseLeave = () => {
-    this.setState({
-      isVisibleDeleteButton: false
     });
   };
 
@@ -67,47 +54,55 @@ export default class Item extends PureComponent {
   };
 
   render() {
-    const { isVisibleDeleteButton, isEdit, fields } = this.state;
+    const { isEdit, fields } = this.state;
     return (
-      <div
-        className={styles.block}
-        onMouseOver={this.handleMouseOver}
-        onMouseLeave={this.handleMouseLeave}
-        onDoubleClick={this.handleDoubleClick}
-      >
-        {isVisibleDeleteButton && (
-          <button
-            className={styles.deleteButton}
-            onClick={this.handleClickDeleteButton}
-          ></button>
+      <div className={styles.block}>
+        {!isEdit && (
+          <Fragment>
+            <div className={styles.textBlock}>
+              {Object.values(fields).map(value => (
+                <p key={value.name} className={styles[value.name]}>
+                  {value.value}
+                </p>
+              ))}
+            </div>
+            <button
+              className={styles.button}
+              onClick={this.handleClickEditButton}
+            >
+              Изменить
+            </button>
+          </Fragment>
         )}
-        {!isEdit &&
-          Object.values(fields).map(value => (
-            <p key={value.name} className={styles[value.name]}>
-              {value.value}
-            </p>
-          ))}
         {isEdit && (
           <Fragment>
-            {Object.values(fields).map(value => (
-              <input
-                type="text"
-                value={value.value}
-                placeholder={value.title}
-                className={styles.input}
-                onChange={this.handleChange}
-                name={value.name}
-                key={value.name}
-              />
-            ))}
+            <div className={styles.inputBlock}>
+              {Object.values(fields).map(value => (
+                <input
+                  type="text"
+                  value={value.value}
+                  placeholder={value.title}
+                  className={styles.input}
+                  onChange={this.handleChange}
+                  name={value.name}
+                  key={value.name}
+                />
+              ))}
+            </div>
             <button
               onClick={this.handleClickSaveButton}
-              className={styles.buttonSave}
+              className={styles.button}
             >
               Сохранить
             </button>
           </Fragment>
         )}
+        <button
+          className={styles.button}
+          onClick={this.handleClickDeleteButton}
+        >
+          Удалить
+        </button>
       </div>
     );
   }

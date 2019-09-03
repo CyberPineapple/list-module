@@ -31,16 +31,14 @@
   border-bottom: 2px solid rgb(189, 163, 129);
   font-size: 23px;
   margin: 15px;
-  transition: transform 0.3s ease, border 0.3s ease;
+  transition: border 0.3s ease;
 }
 
 .input:hover {
-  transform: translateY(-5px);
   border-color: black;
 }
 
 .input:focus {
-  transform: translateY(-5px);
   border-color: black;
 }
 

@@ -3,16 +3,23 @@
   margin: 30px;
   min-height: 300px;
   border: 2px solid rgb(189, 163, 129);
-  cursor: pointer;
   position: relative;
   padding: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
   word-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  cursor: normal;
+}
+
+.textBlock {
+  flex: 1 1 auto;
+}
+
+.inputBlock {
+  flex: 1 1 auto;
 }
 
 .block:hover {
@@ -21,16 +28,27 @@
   box-shadow: 0 10px 20px 1px rgba(126, 115, 115, 0.287);
 }
 
+.button {
+  margin: 10px auto;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: antiquewhite;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 5px 1px rgba(104, 101, 101, 0.466);
+}
+
 .deleteButton {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 25px;
-  height: 25px;
-  background-image: url(http://svtrayd.by/images/n-s.png);
-  background-size: cover;
-  opacity: 0.3;
-  transition: opacity 0.5s ease;
+  composes: button;
 }
 
 .deleteButton:hover {
@@ -38,41 +56,25 @@
 }
 
 .input {
-  margin: 10px;
+  margin: 10px auto;
   display: block;
   width: 100%;
   border-bottom: 2px solid rgb(189, 163, 129);
-  transition: transform 0.3s ease, border 0.3s ease;
+  transition: border 0.3s ease;
 }
 
 .input:hover {
-  transform: translateY(-2px);
   border-color: black;
 }
 
 .input:focus {
-  transform: translateY(-2px);
   border-color: black;
-}
-
-.buttonSave {
-  display: flex;
-  margin: auto;
-  background-color: antiquewhite;
-  padding: 10px;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-transform: uppercase;
-}
-
-.buttonSave:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 3px 5px 1px rgba(104, 101, 101, 0.466);
 }
 
 .text {
   margin: 10px 0;
   width: 100%;
+  cursor: default;
 }
 
 .author {

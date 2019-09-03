@@ -3,9 +3,9 @@
   grid-area: output;
   display: flex;
   flex-direction: row;
+  align-items: stretch;
   flex-wrap: wrap;
   justify-content: space-around;
-  align-items: flex-start;
   overflow-y: scroll;
 }
 
